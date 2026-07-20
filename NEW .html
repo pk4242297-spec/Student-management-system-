@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Management System</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+/* Login */
+#loginPage{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#f0f2f5;
+}
+
+.login-box{
+    background:#fff;
+    padding:30px;
+    width:320px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+    text-align:center;
+}
+
+.login-box input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+.login-box button{
+    width:100%;
+    padding:10px;
+    background:#007BFF;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.login-box button:hover{
+    background:#0056b3;
+}
+
+/* Dashboard */
+#dashboard{
+    display:none;
+}
+
+.header{
+    background:#007BFF;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+.sidebar{
+    width:200px;
+    height:100vh;
+    background:#333;
+    position:fixed;
+    color:white;
+    padding-top:20px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:15px;
+}
+
+.sidebar a:hover{
+    background:#555;
+}
+
+.content{
+    margin-left:220px;
+    padding:20px;
+    background:#f4f4f4;
+    min-height:100vh;
+}
+
+.card{
+    display:inline-block;
+    width:220px;
+    background:white;
+    padding:20px;
+    margin:10px;
+    border-radius:10px;
+    box-shadow:0 0 8px gray;
+    text-align:center;
+}
+</style>
+
+</head>
+<body>
+
+<!-- Login Page -->
+<div id="loginPage">
+    <div class="login-box">
+        <h2>Student Login</h2>
+
+        <input type="text" id="username" placeholder="Username">
+
+        <input type="password" id="password" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+    </div>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard">
+
+    <div class="header">
+        <h2>Student Management Dashboard</h2>
+    </div>
+
+    <div class="sidebar">
+        <a href="#">🏠 Home</a>
+        <a href="#">👨‍🎓 Students</a>
+        <a href="#">📚 Courses</a>
+        <a href="#">📊 Reports</a>
+        <a href="#" onclick="logout()">🚪 Logout</a>
+    </div>
+
+    <div class="content">
+
+        <div class="card">
+            <h2>120</h2>
+            <p>Students</p>
+        </div>
+
+        <div class="card">
+            <h2>12</h2>
+            <p>Courses</p>
+        </div>
+
+        <div class="card">
+            <h2>8</h2>
+            <p>Teachers</p>
+        </div>
+
+        <div class="card">
+            <h2>95%</h2>
+            <p>Attendance</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function login(){
+    var user=document.getElementById("username").value;
+    var pass=document.getElementById("password").value;
+
+    if(user==="admin" && pass==="1234"){
+        document.getElementById("loginPage").style.display="none";
+        document.getElementById("dashboard").style.display="block";
+    }else{
+        alert("Invalid Username or Password");
+    }
+}
+
+function logout(){
+    document.getElementById("dashboard").style.display="none";
+    document.getElementById("loginPage").style.display="flex";
+
+    document.getElementById("username").value="";
+    document.getElementById("password").value="";
+}
+</script>
+
+</body>
+</html>
