@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Management System</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6fb;
+}
+
+/* Header */
+.header {
+    height: 70px;
+    background: #2878d4;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 220px;
+    height: calc(100vh - 70px);
+    background: #222;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 18px 25px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sidebar a:hover {
+    background: #2878d4;
+}
+
+/* Main Content */
+.main {
+    margin-left: 220px;
+    padding: 30px;
+}
+
+/* Pages */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Dashboard Cards */
+.cards {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    width: 220px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px #ccc;
+}
+
+.card h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+/* Profile */
+.profile-box {
+    background: white;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px #ccc;
+}
+
+.profile-box p {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #2878d4;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+    Student Management Dashboard
+</div>
+
+<!-- Sidebar -->
+<div class="sidebar">
+
+    <a onclick="showPage('dashboard')">🏠 Home</a>
+
+    <a onclick="showPage('students')">👨‍🎓 Students</a>
+
+    <a onclick="showPage('courses')">📚 Courses</a>
+
+    <a onclick="showPage('reports')">📊 Reports</a>
+
+    <a onclick="showPage('profile')">👤 Profile</a>
+
+    <a onclick="logout()">🚪 Logout</a>
+
+</div>
+
+<!-- Main -->
+<div class="main">
+
+    <!-- Dashboard Page -->
+    <div id="dashboard" class="page active">
+
+        <h1>Dashboard</h1>
+
+        <div class="cards">
+
+            <div class="card">
+                <h2>120</h2>
+                <p>Students</p>
+            </div>
+
+            <div class="card">
+                <h2>12</h2>
+                <p>Courses</p>
+            </div>
+
+            <div class="card">
+                <h2>8</h2>
+                <p>Teachers</p>
+            </div>
+
+            <div class="card">
+                <h2>95%</h2>
+                <p>Attendance</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Students Page -->
+    <div id="students" class="page">
+
+        <h1>Students</h1>
+
+        <table>
+
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Year</th>
+            </tr>
+
+            <tr>
+                <td>101</td>
+                <td>Praveen</td>
+                <td>BCA</td>
+                <td>III</td>
+            </tr>
+
+            <tr>
+                <td>102</td>
+                <td>Arun</td>
+                <td>BCA</td>
+                <td>II</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- Courses Page -->
+    <div id="courses" class="page">
+
+        <h1>Courses</h1>
+
+        <div class="cards">
+
+            <div class="card">
+                <h2>BCA</h2>
+                <p>Bachelor of Computer Applications</p>
+            </div>
+
+            <div class="card">
+                <h2>B.Sc CS</h2>
+                <p>Computer Science</p>
+            </div>
+
+            <div class="card">
+                <h2>B.Com</h2>
+                <p>Commerce</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Reports Page -->
+    <div id="reports" class="page">
+
+        <h1>Reports</h1>
+
+        <div class="cards">
+
+            <div class="card">
+                <h2>95%</h2>
+                <p>Attendance</p>
+            </div>
+
+            <div class="card">
+                <h2>87%</h2>
+                <p>Average Mark</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Profile Page -->
+    <div id="profile" class="page">
+
+        <h1>My Profile</h1>
+
+        <br>
+
+        <div class="profile-box">
+
+            <h2>Student Profile</h2>
+
+            <p><b>Name:</b> Praveen Kumar</p>
+
+            <p><b>Roll No:</b> RCAS2025BCA256</p>
+
+            <p><b>Course:</b> BCA</p>
+
+            <p><b>Department:</b> Computer Applications</p>
+
+            <p><b>Year:</b> III Year</p>
+
+            <p><b>Email:</b> praveen@example.com</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function showPage(pageName) {
+
+    
+    let pages = document.querySelectorAll(".page");
+
+    pages.forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    
+    document.getElementById(pageName).classList.add("active");
+}
+
+
+function logout() {
+
+    alert("You have been logged out!");
+
+    
+
+}
+
+</script>
+
+</body>
+</html>
