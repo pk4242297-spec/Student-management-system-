@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- LOGIN -->
+    <section id="loginPage" class="page active">
+        <div class="login-card">
+
+            <div class="logo">🎓</div>
+
+            <h1>Student Management System</h1>
+            <p class="welcome">Student Login</p>
+
+            <label>Username</label>
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter username"
+                autocomplete="off"
+            >
+
+            <label>Password</label>
+
+            <div class="password-box">
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                >
+                <button type="button" id="showPassword">👁️</button>
+            </div>
+
+            <button id="loginBtn" class="login-btn">
+                LOGIN
+            </button>
+
+            <p id="loginMessage"></p>
+
+        </div>
+    </section>
+
+
+    <!-- DASHBOARD -->
+    <section id="dashboardPage" class="page">
+
+        <header class="topbar">
+
+            <div>
+                <h2>Student Management System</h2>
+                <p>Welcome, PRAVEENKUMAR</p>
+            </div>
+
+            <button id="logoutBtn" class="logout-btn">
+                Logout
+            </button>
+
+        </header>
+
+
+        <main class="dashboard">
+
+            <div class="hero">
+
+                <div>
+                    <p class="small-text">WELCOME BACK</p>
+                    <h1>PRAVEENKUMAR 👋</h1>
+                    <p>Manage your student information easily.</p>
+                </div>
+
+                <div class="avatar">PK</div>
+
+            </div>
+            <h2 class="section-title">Student Dashboard</h2>
+
+            <div class="menu-grid">
+
+                <button class="menu-card" data-page="profile">
+                    <span>👤</span>
+                    <strong>My Profile</strong>
+                    <small>Student information</small>
+                </button>
+
+                <button class="menu-card" data-page="courses">
+                    <span>📚</span>
+                    <strong>My Courses</strong>
+                    <small>Course details</small>
+                </button>
+
+                <button class="menu-card" data-page="attendance">
+                    <span>📅</span>
+                    <strong>Attendance</strong>
+                    <small>Attendance details</small>
+                </button>
+
+                <button class="menu-card" data-page="marks">
+                    <span>📝</span>
+                    <strong>Marks & Results</strong>
+                    <small>Academic performance</small>
+                </button>
+
+                <button class="menu-card" data-page="timetable">
+                    <span>🕐</span>
+                    <strong>Timetable</strong>
+                    <small>Class schedule</small>
+                </button>
+
+                <button class="menu-card" data-page="assignments">
+                    <span>📖</span>
+                    <strong>Assignments</strong>
+                    <small>Your assignments</small>
+                </button>
+
+                <button class="menu-card" data-page="notifications">
+                    <span>🔔</span>
+                    <strong>Notifications</strong>
+                    <small>Latest updates</small>
+                </button>
+
+                <button class="menu-card" data-page="settings">
+                    <span>⚙️</span>
+                    <strong>Settings</strong>
+                    <small>Application settings</small>
+                </button>
+
+            </div>
+
+        </main>
+    </section>
+
+
+    <!-- INNER PAGE -->
+    <section id="contentPage" class="page">
+
+        <header class="topbar">
+
+            <div>
+                <h2>Student Management System</h2>
+            </div>
+
+            <button id="backBtn" class="back-btn">
+                ← Dashboard
+            </button>
+
+        </header>
+
+
+        <main class="content-area">
+
+            <div class="content-card">
+
+                <div id="contentIcon" class="big-icon">👤</div>
+
+                <h1 id="pageTitle">My Profile</h1>
+
+                <div id="pageContent"></div>
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
