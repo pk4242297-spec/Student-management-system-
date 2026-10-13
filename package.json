@@ -1,0 +1,23 @@
+{
+  "name": "student-management-system-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js.js",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env js.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pk4242297-spec/Student-management-system-.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pk4242297-spec/Student-management-system-/issues"
+  },
+  "homepage": "https://github.com/pk4242297-spec/Student-management-system-#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
